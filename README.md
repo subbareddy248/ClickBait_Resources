@@ -46,6 +46,7 @@
 	MetaEmbeddings_model = gensim.models.KeyedVectors.load_word2vec_format('./te_metaEmbeddings.txt', binary=False)
 * "te_metaEmbeddings.txt" file can be downloaded from "https://bit.ly/36UM9oO" 
 
+
 ## ELMo
 
 #### Code-Snippet for Elmo Features:
@@ -62,7 +63,7 @@
 	con = WXC(order='utf2wx',lang='tel')  
 	tk = Tokenizer(lang='te', split_sen=False)  
 	  
-	sentence = ''  
+	sentence = "pilli cApa mIxa kUrcuMxi"  
 	wx_sentence = con.convert(sentence)  
 
 	elmo_features = np.mean(elmo.embed_sentence(tk.tokenize(wx_sentence))[2],axis=0)
@@ -73,56 +74,80 @@
 * "wxconv" module can be downloaded from "https://github.com/irshadbhat/indic-wx-converter"
 * "polyglot_tokenizer" module can be downloaded from "https://github.com/ltrc/polyglot-tokenizer"
 
+
 ## BERT
 #### Code-Snippet for BERT Features:
 	from bertviz import head_view  
 	from transformers import BertTokenizer, BertModel, AutoTokenizer, AutoModel, BertConfig, BertForSequenceClassification, BertForNextSentencePrediction  
   
-	def show_head_view(model, tokenizer, sentence_a, sentence_b=None):  
 
-		inputs = tokenizer.encode_plus(sentence_a, sentence_b, return_tensors='pt', add_special_tokens=True)  
-
-		input_ids = inputs['input_ids']  
-
-		if sentence_b:  
-
-			token_type_ids = inputs['token_type_ids']  
-
-			attention = model(input_ids, token_type_ids=token_type_ids)[-1]  
-
-			sentence_b_start = token_type_ids[0].tolist().index(1)  
-
-		else:  
-
-			attention = model(input_ids)[-1]  
-
-			sentence_b_start = None  
-
-		input_id_list = input_ids[0].tolist() # Batch index 0  
-
-		tokens = tokenizer.convert_ids_to_tokens(input_id_list)  
-
-		return attention  
-  
-	config = BertConfig.from_pretrained("",output_attentions=True)  
-
-	tokenizer = AutoTokenizer.from_pretrained("")  
-
+	config = BertConfig.from_pretrained("scsmuhio/",output_attentions=True)  
+	tokenizer = AutoTokenizer.from_pretrained("scsmuhio/")  
 	model = AutoModel.from_pretrained("./pytorch_model_task.bin",config=config)  
+	
+	sentence_a = "pilli cApa mIxa kUrcuMxi"
+	
+	text_features = []
+	inputs = tokenizer.encode_plus(sentence_a, None, return_tensors='pt', add_special_tokens=True)
+	input_ids = inputs['input_ids']
+	output = model(input_ids)[0]
+	output = output.detach().numpy()
+	text_features.append(np.mean(output,axis=1))
 
-	sentence_a = "pilli cApa mIxa kUrcuMxi"  
-	sentence_b = "pilli raggu mIxa padukuMxi"  
-	sen_vec = show_head_view(model, tokenizer, sentence_a, sentence_b)
 
-* "transformers" module can be downloaded from "https://huggingface.co/transformers/"
-* "bertviz" module can be downloaded ""
+
 
 ## ALBERT
-#### Code-Snippet for ALBERT Features:
+#### Code-Snippet for ALBERT Features:  
+	
+	from bertviz import head_view
+	from transformers import AlbertTokenizer, AlbertModel,AutoTokenizer, AutoModelWithLMHead
+
+	model = AlbertModel.from_pretrained('scsmuhio/TeAlbert', output_attentions=True)
+	tokenizer = AlbertTokenizer.from_pretrained('scsmuhio/TeAlbert')
+	sentence_a = "pilli cApa mIxa kUrcuMxi"
+	
+	text_features = []
+	inputs = tokenizer.encode_plus(sentence_a, None, return_tensors='pt', add_special_tokens=True)
+	input_ids = inputs['input_ids']
+	output = model(input_ids)[0]
+	output = output.detach().numpy()
+	text_features.append(np.mean(output,axis=1))
+
 
 ## RoBERTa
 #### Code-Snippet for RoBERTa Features:
 
+	from transformers import RobertaModel, RobertaTokenizer
+	from bertviz import head_view
+
+	model = RobertaModel.from_pretrained('scsmuhio/TeRobeRta', output_attentions=True)
+	tokenizer = RobertaTokenizer.from_pretrained('scsmuhio/TeRobeRta')
+	
+	sentence_a = "pilli cApa mIxa kUrcuMxi"
+
+	inputs = tokenizer.encode_plus(sentence_a, None, return_tensors='pt', add_special_tokens=True)
+	input_ids = inputs['input_ids']
+	output = model(input_ids)[0]
+	output = output.detach().numpy()
+	
+	text_features.append(np.mean(output,axis=1))
+
 ## ELECTRA
 #### Code-Snippet for ELECTRA Features:
+	from transformers import ElectraModel,ElectraConfig, ElectraTokenizer, ElectraForMaskedLM
+	from bertviz import head_view
+	
+	config = ElectraConfig.from_pretrained("scsmuhio/TeElectra")
+	tokenizer = ElectraTokenizer.from_pretrained("scsmuhio/TeElectra",output_attentions=True)
+	model = ElectraModel.from_pretrained("scsmuhio/TeElectra",config=config)
+	
+	sentence_a = "pilli cApa mIxa kUrcuMxi"
+	
+	inputs = tokenizer.encode_plus(sentence_a, None, return_tensors='pt', add_special_tokens=True)
+	input_ids = inputs['input_ids']
+	output = model(input_ids)[0]
+	output = output.detach().numpy()
+	text_features.append(np.mean(output,axis=1))
+
 
