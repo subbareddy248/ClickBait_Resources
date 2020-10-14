@@ -1,10 +1,12 @@
 <details>
 <summary>Word Embeddings</summary>
 	
+	Code-Snippets were given to load the respective models and get the respective representation.
 * [Word2Vec](#word2vec)
 * [GloVe](#glove)
 * [FastText](#fasttext)
 * [Meta-Embeddings](#meta-embeddings)
+* [Skip-Thought](#skip-thought)
 * [ELMo](#elmo)
 * [BERT](#bert)
 * [ALBERT](#albert)
