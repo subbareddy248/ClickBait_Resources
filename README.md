@@ -59,6 +59,7 @@
                     checkpoint_path=CHECKPOINT_PATH)
 	encodings = encoder.encode(data)
 
+* vocab.txt,embeddings.npy,model for the skip-thought model can be downloaded from this [folder](https://bit.ly/2SUcUBu)
 
 ## ELMo
 
@@ -82,8 +83,7 @@
 	elmo_features = np.mean(elmo.embed_sentence(tk.tokenize(wx_sentence))[2],axis=0)
 
 * "allennlp" module can be downloaded from "https://github.com/allenai/allennlp"
-* "elmo_weights.hdf5" file can be downloaded from ""
-* "options.json" file can be downloaded from ""
+* "elmo_weights.hdf5","options.json" files can be downloaded from this [folder](https://bit.ly/2SV0bPc)
 * "wxconv" module can be downloaded from "https://github.com/irshadbhat/indic-wx-converter"
 * "polyglot_tokenizer" module can be downloaded from "https://github.com/ltrc/polyglot-tokenizer"
 
@@ -109,7 +109,7 @@
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
 * bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
-* config file- "TeBertConfig" ,tokenizer - "TeBert" ,model - "pytorch_model_task.bin"can be downloaded from this [folder]()
+* config file- "TeBertConfig" ,tokenizer - "TeBert" ,model - "pytorch_model_task.bin"can be downloaded from this [folder](https://drive.google.com/drive/folders/1CclYrllr-xZBua1hRrHdI4UfXh_8ae7O?usp=sharing)
 
 
 ## ALBERT
@@ -133,7 +133,7 @@
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
 * bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
-* ALBERT model - "TeAlbert"can be downloaded from this [folder]()
+* ALBERT model - "TeAlbert"can be downloaded from this [folder](https://drive.google.com/drive/folders/1hv3W5wTI9GtakzUkj124Sh5ojdAWxW8U?usp=sharing)
 
 ## RoBERTa
 #### Code-Snippet for RoBERTa Features:
@@ -156,7 +156,7 @@
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
 * bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
-* RoBERTa Model - "TeRobeRta"can be downloaded from this [folder]()
+* RoBERTa Model - "TeRobeRta"can be downloaded from this [folder](https://drive.google.com/drive/folders/1RClfrqxJ3LV8azhVq_hHVTRWAmf6kTXE?usp=sharing)
 
 ## ELECTRA
 #### Code-Snippet for ELECTRA Features:
@@ -179,4 +179,4 @@
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
 * bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
-* ELECTRA model - "TeElectra"can be downloaded from this [folder]()
+* ELECTRA model - "TeElectra"can be downloaded from this [folder](https://drive.google.com/drive/folders/1Sp77omN2C1dzYuwNfb4IYmayHQuLef_B?usp=sharing)
