@@ -94,10 +94,10 @@
 	from transformers import BertTokenizer, BertModel, AutoTokenizer, AutoModel, BertConfig, BertForSequenceClassification, BertForNextSentencePrediction  
   
 
-	config = BertConfig.from_pretrained("scsmuhio/",output_attentions=True)  
-	tokenizer = AutoTokenizer.from_pretrained("scsmuhio/")  
-	model = AutoModel.from_pretrained("./pytorch_model_task.bin",config=config)  
-	
+	config = BertConfig.from_pretrained("scsmuhio/TeBertConfig",output_attentions=True)  
+	tokenizer = AutoTokenizer.from_pretrained("scsmuhio/TeBert")  
+	model = AutoModel.from_pretrained("scsmuhio/pytorch_model_task.bin",config=config)  
+	# sentence here is in WX format
 	sentence_a = "pilli cApa mIxa kUrcuMxi"
 	
 	text_features = []
@@ -107,7 +107,9 @@
 	output = output.detach().numpy()
 	text_features.append(np.mean(output,axis=1))
 
-
+* "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
+* bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
+* config file- "TeBertConfig" ,tokenizer - "TeBert" ,model - "pytorch_model_task.bin"can be downloaded from this [folder]()
 
 
 ## ALBERT
@@ -118,6 +120,8 @@
 
 	model = AlbertModel.from_pretrained('scsmuhio/TeAlbert', output_attentions=True)
 	tokenizer = AlbertTokenizer.from_pretrained('scsmuhio/TeAlbert')
+
+	# sentence here is in WX format
 	sentence_a = "pilli cApa mIxa kUrcuMxi"
 	
 	text_features = []
@@ -127,6 +131,9 @@
 	output = output.detach().numpy()
 	text_features.append(np.mean(output,axis=1))
 
+* "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
+* bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
+* ALBERT model - "TeAlbert"can be downloaded from this [folder]()
 
 ## RoBERTa
 #### Code-Snippet for RoBERTa Features:
@@ -136,7 +143,8 @@
 
 	model = RobertaModel.from_pretrained('scsmuhio/TeRobeRta', output_attentions=True)
 	tokenizer = RobertaTokenizer.from_pretrained('scsmuhio/TeRobeRta')
-	
+
+	# sentence here is in WX format	
 	sentence_a = "pilli cApa mIxa kUrcuMxi"
 
 	inputs = tokenizer.encode_plus(sentence_a, None, return_tensors='pt', add_special_tokens=True)
@@ -145,6 +153,10 @@
 	output = output.detach().numpy()
 	
 	text_features.append(np.mean(output,axis=1))
+
+* "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
+* bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
+* RoBERTa Model - "TeRobeRta"can be downloaded from this [folder]()
 
 ## ELECTRA
 #### Code-Snippet for ELECTRA Features:
@@ -155,6 +167,7 @@
 	tokenizer = ElectraTokenizer.from_pretrained("scsmuhio/TeElectra",output_attentions=True)
 	model = ElectraModel.from_pretrained("scsmuhio/TeElectra",config=config)
 	
+	# sentence here is in WX format
 	sentence_a = "pilli cApa mIxa kUrcuMxi"
 	
 	inputs = tokenizer.encode_plus(sentence_a, None, return_tensors='pt', add_special_tokens=True)
@@ -164,3 +177,6 @@
 	text_features.append(np.mean(output,axis=1))
 
 
+* "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
+* bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
+* ELECTRA model - "TeElectra"can be downloaded from this [folder]()
