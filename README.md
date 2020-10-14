@@ -111,7 +111,6 @@
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
 * bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
-* config file- "TeBertConfig" ,tokenizer - "TeBert" ,model - "pytorch_model_task.bin"can be downloaded from this [folder](https://drive.google.com/drive/folders/1CclYrllr-xZBua1hRrHdI4UfXh_8ae7O?usp=sharing)
 
 
 ## ALBERT
@@ -135,7 +134,6 @@
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
 * bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
-* ALBERT model - "TeAlbert"can be downloaded from this [folder](https://drive.google.com/drive/folders/1hv3W5wTI9GtakzUkj124Sh5ojdAWxW8U?usp=sharing)
 
 ## RoBERTa
 #### Code-Snippet for RoBERTa Features:
@@ -158,7 +156,6 @@
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
 * bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
-* RoBERTa Model - "TeRobeRta"can be downloaded from this [folder](https://drive.google.com/drive/folders/1RClfrqxJ3LV8azhVq_hHVTRWAmf6kTXE?usp=sharing)
 
 ## ELECTRA
 #### Code-Snippet for ELECTRA Features:
@@ -181,4 +178,3 @@
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
 * bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
-* ELECTRA model - "TeElectra"can be downloaded from this [folder](https://drive.google.com/drive/folders/1Sp77omN2C1dzYuwNfb4IYmayHQuLef_B?usp=sharing)
