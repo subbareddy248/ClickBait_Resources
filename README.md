@@ -46,6 +46,19 @@
 	MetaEmbeddings_model = gensim.models.KeyedVectors.load_word2vec_format('./te_metaEmbeddings.txt', binary=False)
 * "te_metaEmbeddings.txt" file can be downloaded from "https://bit.ly/36UM9oO" 
 
+## Skip-Thought 
+#### Code Snippet for Skip-Thought Model
+
+	VOCAB_FILE = "./data/exp_vocab/vocab.txt"
+	EMBEDDING_MATRIX_FILE = "./data/exp_vocab/embeddings.npy"
+	CHECKPOINT_PATH = "./data/model/model.ckpt-129597"
+	encoder = encoder_manager.EncoderManager()
+	encoder.load_model(configuration.model_config(),
+                    vocabulary_file=VOCAB_FILE,
+                    embedding_matrix_file=EMBEDDING_MATRIX_FILE,
+                    checkpoint_path=CHECKPOINT_PATH)
+	encodings = encoder.encode(data)
+
 
 ## ELMo
 
@@ -70,7 +83,7 @@
 
 * "allennlp" module can be downloaded from "https://github.com/allenai/allennlp"
 * "elmo_weights.hdf5" file can be downloaded from ""
-* "options.json" file can be downloaded from " "
+* "options.json" file can be downloaded from ""
 * "wxconv" module can be downloaded from "https://github.com/irshadbhat/indic-wx-converter"
 * "polyglot_tokenizer" module can be downloaded from "https://github.com/ltrc/polyglot-tokenizer"
 
