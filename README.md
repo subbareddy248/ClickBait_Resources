@@ -18,7 +18,7 @@
 *  NLTK and Spacy currently have no support for Telugu POS tagging. 
 *  This lead to rely on other sources for this task and hence we used a [source library](https://bitbucket.org/sivareddyg/telugu-part-of-speech-tagger/src/master/) performing this task. 
 *  The author of this work is Siva Reddy an alumnus of IIIT-Hyderabad and IIITH-LTRC Lab.
-* Check the ".ipnyb" files in "te_extract_pos" folder after extracting the zip file for understanding of how the POS tags were assigned
+* Check the *posguidelines.pdf* in "POS_TAGS" folder for understanding the respective Part-of-speech tags in the csv files.
 </details>
 
 
